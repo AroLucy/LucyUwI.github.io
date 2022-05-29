@@ -1,0 +1,224 @@
+/* Import Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap');
+
+/* Website Style */
+
+body,
+html {
+    overflow: hidden;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    filter: drop-shadow(2px 2px 10px #777);
+}
+
+#Content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 10px #777);
+    text-align: center;
+}
+
+#ProjectContent {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: flex-end;
+    filter: drop-shadow(2px 2px 10px #777);
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+.dark {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+.darkicn {
+    filter: invert()
+}
+
+.Project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Twitter Github Buttons */
+
+#Buttons {
+    padding-bottom: 20px;
+}
+
+#Buttons > button {
+    border: none;
+    background: #00000000;
+}
+
+#Buttons > button > img {
+    height: 2em;
+}
+
+#twitter:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(120%) contrast(97%);
+}
+#github:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(200%) contrast(97%);
+}
+#discord:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(230deg) brightness(120%) contrast(97%);
+}
+#twickd:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(120%) contrast(97%);
+}
+
+.darkicn > #twitter:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(10deg) brightness(120%) contrast(97%);
+}
+.darkicn > #github:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(90deg) brightness(100%) contrast(100%);
+}
+.darkicn > #discord:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(120%) contrast(97%);
+}
+.darkicn > #twickd:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(140deg) brightness(120%) contrast(97%);
+}
+
+/* Main Button */
+
+#MainButton {
+    display: flex;
+    background: linear-gradient(45deg, #f88, #88f);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    width: 15%;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    align-items: center;
+    transition: width 1s;
+}
+
+#MainButton:hover {
+    width: 20%;
+    transition: all 1s;
+}
+
+/* Project Button */
+
+.ProjectButton {
+    display: flex;
+    background: linear-gradient(45deg, #f88, #88f);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    width: 5em;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    align-items: center;
+    transition: all 1s;
+}
+
+.ProjectButton:hover {
+    width: 7em;
+    transition: all 1s;
+}
+
+#proj {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+/* Theme Button */
+
+#theme {
+    position: fixed;
+    right: 0.25em;
+    bottom: 0.25em;
+    border-radius: 50px;
+    border: none;
+}
+
+#theme > img {
+    height: inherit;
+    filter: invert();
+}
+
+.themeL {
+    background: linear-gradient(45deg, #eeff01, #d6b14c);
+}
+
+.themeD {
+    background: linear-gradient(45deg, #000d55, #4f005f);
+}
+
+#theme:hover > img {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
+}
+
+#ThemeContainer {
+    display: flex;
+    height: 40vh;
+    flex-direction: row-reverse;
+}
+
+@media (min-height:1080px) {
+
+    h1 {
+        font-size: 5rem;
+    }
+    #Buttons > button > img {
+        height: 4em;
+    }
+    #MainButton {
+        width: 30%;
+        height: 80px;
+        font-size: 2rem;
+    }
+    .ProjectButton {
+        width: 30%;
+        height: 80px;
+        font-size: 2rem;
+    }
+    #theme {
+        height: 80px;
+        font-size: 2rem;
+    }
+    p {
+        font-size: 3rem;
+    }
+    #ProjectContent {
+        height: 60vh;
+    }
+    .Project{
+        padding-bottom: 10vh;
+    }
+    #ThemeContainer {
+        height: auto;
+    }
+}
