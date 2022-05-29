@@ -13,6 +13,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 }
 
 function theme() {
+    const toggled = localStorage.getItem('ThemeToggled')
     document.body.classList.toggle("dark")
     document.getElementById("button1").classList.toggle("darkicn")
     document.getElementById("button2").classList.toggle("darkicn")
@@ -23,7 +24,6 @@ function theme() {
     } else if (toggled == 'true') {
         localStorage.removeItem('ThemeToggled')
     }
-    location.reload()
 }
 
 if (toggled == 'true') {
