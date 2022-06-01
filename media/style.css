@@ -2,19 +2,65 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap');
 
-/* Website Style */
+/* Global Colors */
+
+:root{
+    --body: #fff;
+    --text: #000;
+    --shadow: #777;
+    --buttonL: #f88;
+    --buttonR: #88f;
+    --TbuttonL: #ff1;
+    --TbuttonR: #ff8;
+    --github: var(--text);
+    --twitter: var(--text);
+    --discord: var(--text);
+    --twickd: var(--text);
+    --theme: var(--text);
+}
+.darkmode{
+    --body: #222;
+    --text: #fff;
+    --shadow: #555;
+    --buttonL: #405;
+    --buttonR: #005;
+    --TbuttonL: #005;
+    --TbuttonR: #405;
+    --github: var(--text);
+    --twitter: var(--text);
+    --discord: var(--text);
+    --twickd: var(--text);
+    --theme: var(--text);
+}
+
+/* Main Styles */
+
+html:not(#A) {
+    overflow:hidden;
+}
 
 body,
-html {
-    overflow: hidden;
+html{
     margin: 0;
+    background: var(--body);
+    color: var(--text);
+}
+
+#A {
+    height:fit-content;
 }
 
 main {
-    height: 100vh;
+    height: auto;
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(2px 2px 10px #777);
+    filter: drop-shadow(2px 2px 10px var(--shadow));
 }
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Content Boxes */
 
 #Content {
     height: 100vh;
@@ -23,7 +69,7 @@ main {
     align-items: center;
     align-content: center;
     justify-content: center;
-    filter: drop-shadow(2px 2px 10px #777);
+    filter: drop-shadow(2px 2px 10px var(--shadow));
     text-align: center;
 }
 
@@ -34,21 +80,12 @@ main {
     align-items: center;
     align-content: flex-end;
     justify-content: flex-end;
-    filter: drop-shadow(2px 2px 10px #777);
+    filter: drop-shadow(2px 2px 10px var(--shadow));
     text-align: center;
     padding-bottom: 4em;
 }
 
-.dark {
-    background: #1f1f1f;
-    color: #fff;
-}
-
-.darkicn {
-    filter: invert()
-}
-
-.Project {
+#Projects {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,11 +93,18 @@ main {
     flex-wrap: wrap;
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
+.Project {
+    display: flex;
+    min-width: 6rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    text-align:center;
 }
 
-/* Twitter Github Buttons */
+/* Social Media Buttons */
 
 #Buttons {
     padding-bottom: 20px;
@@ -88,24 +132,28 @@ p {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(120%) contrast(97%);
 }
 
-.darkicn > #twitter:hover {
+.DarkIcon > #twitter:hover {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(10deg) brightness(120%) contrast(97%);
 }
-.darkicn > #github:hover {
+.DarkIcon > #github:hover {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(90deg) brightness(100%) contrast(100%);
 }
-.darkicn > #discord:hover {
+.DarkIcon > #discord:hover {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(120%) contrast(97%);
 }
-.darkicn > #twickd:hover {
+.DarkIcon > #twickd:hover {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(140deg) brightness(120%) contrast(97%);
 }
 
-/* Main Button */
+.DarkIcon {
+    filter: invert()
+}
+
+/* Buttons */
 
 #MainButton {
     display: flex;
-    background: linear-gradient(45deg, #f88, #88f);
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     width: 15%;
@@ -123,11 +171,9 @@ p {
     transition: all 1s;
 }
 
-/* Project Button */
-
 .ProjectButton {
     display: flex;
-    background: linear-gradient(45deg, #f88, #88f);
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     width: 5em;
@@ -145,15 +191,6 @@ p {
     transition: all 1s;
 }
 
-#proj {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-}
-
 /* Theme Button */
 
 #theme {
@@ -162,19 +199,12 @@ p {
     bottom: 0.25em;
     border-radius: 50px;
     border: none;
+    background: linear-gradient(45deg, var(--TbuttonL), var(--TbuttonR));
 }
 
 #theme > img {
     height: inherit;
     filter: invert();
-}
-
-.themeL {
-    background: linear-gradient(45deg, #eeff01, #d6b14c);
-}
-
-.themeD {
-    background: linear-gradient(45deg, #000d55, #4f005f);
 }
 
 #theme:hover > img {
@@ -186,6 +216,8 @@ p {
     height: 40vh;
     flex-direction: row-reverse;
 }
+
+/* Mobile Styles */
 
 @media (min-height:1080px) {
 
@@ -215,10 +247,14 @@ p {
     #ProjectContent {
         height: 60vh;
     }
-    .Project{
+    #Projects{
         padding-bottom: 10vh;
+        flex-direction: column;
     }
     #ThemeContainer {
         height: auto;
+    }
+    .Project {
+        min-width: 75vw;
     }
 }
