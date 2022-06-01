@@ -46,6 +46,13 @@ html{
     color: var(--text);
 }
 
+@media (hover: hover) {
+    body:not(.darkmode):hover,
+    html:not(.darkmode):hover {
+        background: linear-gradient(45deg, #faa, #fca, #ffa, #afa, #aaf, #faf);
+    }
+}
+
 #A {
     height:fit-content;
 }
@@ -53,7 +60,7 @@ html{
 main {
     height: auto;
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(2px 2px 10px var(--shadow));
+    filter: drop-shadow(2px 2px 10px );
 }
 
 p {
