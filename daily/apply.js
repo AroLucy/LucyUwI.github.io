@@ -16,7 +16,4 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-function show() {
-    readTextFile("./daily.txt")
-    document.getElementById("hideAfter").classList.toggle("hide")
-}
+readTextFile("./daily.txt")
