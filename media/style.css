@@ -60,7 +60,7 @@ html{
 main {
     height: auto;
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(2px 2px 10px );
+    filter: drop-shadow(0px 0px 0.1px var(--shadow));
 }
 
 p {
@@ -76,7 +76,7 @@ p {
     align-items: center;
     align-content: center;
     justify-content: center;
-    filter: drop-shadow(2px 2px 10px var(--shadow));
+    filter: drop-shadow(0px 0px 0.1px var(--shadow));
     text-align: center;
 }
 
@@ -87,7 +87,7 @@ p {
     align-items: center;
     align-content: flex-end;
     justify-content: flex-end;
-    filter: drop-shadow(2px 2px 10px var(--shadow));
+    filter: drop-shadow(0px 0px 0.1px var(--shadow));
     text-align: center;
     padding-bottom: 4em;
 }
