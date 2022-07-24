@@ -46,13 +46,6 @@ html{
     color: var(--text);
 }
 
-@media (hover: hover) {
-    body:not(.darkmode):hover,
-    html:not(.darkmode):hover {
-        background: linear-gradient(45deg, #faa, #fca, #ffa, #afa, #aaf, #faf);
-    }
-}
-
 #A {
     height:fit-content;
 }
