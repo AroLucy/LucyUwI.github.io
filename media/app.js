@@ -2,6 +2,7 @@ var toggled = localStorage.getItem('ThemeToggled')
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light";
+    theme();
 });
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
