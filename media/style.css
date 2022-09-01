@@ -256,7 +256,6 @@ label#progress {
 @media (min-height:1080px) {
 
 	main {
-		display: flex;
     	justify-content: center;
 	}
 	content: {
