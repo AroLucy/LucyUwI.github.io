@@ -261,7 +261,7 @@ label#progress {
 
 @media (min-height:1080px) {
 	
-	html {
+	html:not(#A) {
 	overflow:initial;
 	}
 
