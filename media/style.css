@@ -101,6 +101,7 @@ footer {
 .Project {
     display: flex;
     min-width: 6rem;
+    max-width: 14rem;
     flex-direction: column;
     align-content: center;
     justify-content: center;
