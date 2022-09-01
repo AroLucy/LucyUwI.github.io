@@ -42,6 +42,7 @@ html:not(#A) {
 body,
 html{
     margin: 0;
+    height: 100vh;
     background: var(--body);
     color: var(--text);
 }
