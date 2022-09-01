@@ -26,23 +26,23 @@ async function SetData() {
 								
 		Album = nowPlay.item.album.name;
 		Artist = nowPlay.item.artists[0].name;
+		Duration = nowPlay.item.duration_ms;
 		if (nowPlay.item.album.images[0].url !== undefined) {
 		    AlbumArt = nowPlay.item.album.images[0].url;
 		}
-		Duration = nowPlay.item.duration_ms;
 
 		// Apply new data to HTML elements 
 		
 		document.getElementById("track").innerText = Track;
 		document.getElementById("album").innerText = Album;
 		document.getElementById("artist").innerText = Artist;
+		document.getElementById("length").max = Duration;
 		if (AlbumArt === undefined) {
 		    document.getElementById("art").style.display = "none"
 		} else {
 		    document.getElementById("art").style.display = "block"
 		    document.getElementById("art").src = AlbumArt;
 		}
-		document.getElementById("length").max = Duration;
 	};
 	if (Track === undefined) {
 		document.getElementById("spotify").style.display = "none"
