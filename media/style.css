@@ -95,6 +95,7 @@ footer {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    height: 35vh;
 }
 
 .Project {
@@ -290,6 +291,7 @@ label#progress {
     #Projects{
         padding-bottom: 10vh;
         flex-direction: column;
+        height: auto;
     }
     #ThemeContainer {
         height: auto;
