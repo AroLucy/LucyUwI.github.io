@@ -220,6 +220,9 @@ footer {
 #theme:hover > img {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
 }
+#ThemeContainer {
+    filter: drop-shadow(0px 0px 5px var(--shadow));
+}
 
 /* Spotify Now Playing */
 
