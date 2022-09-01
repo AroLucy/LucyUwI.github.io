@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Lucy's Home</title>
+	<meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/media/style.css">
     <link rel="icon" href="/media/me.ico">
   </head>
@@ -16,9 +17,23 @@
           <button id="MainButton" onclick="window.location='/Projects'">Projects</button>
       </div>
     </main>
-    <div id="ThemeContainer">
-      <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg"></button>
-    </div>
+	<footer>
+		<div id="spotify">
+			<img id="art" width="100px" height="100px">
+			<div id="text">
+				<h1 id="track">Track</h1>
+				<h2 id="album">Album</h2>
+				<h2 id="artist">Artist</h2>
+				<div id="progressdiv">
+					<progress id="length" max="0" value="0"></progress>
+					<label id="progress" for="length"></label>
+				</div>
+			</div>
+		</div>
+	    <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg">
+		</button>
+	</footer>
     <script src="/media/app.js"></script>
+	  <script src="Spotify.js"></script>
   </body>
 </html>
