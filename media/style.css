@@ -35,9 +35,7 @@
 
 /* Main Styles */
 
-html:not(#A) {
-    overflow:hidden;
-}
+
 
 body,
 html{
