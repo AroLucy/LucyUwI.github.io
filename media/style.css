@@ -260,6 +260,10 @@ label#progress {
 /* Mobile Styles */
 
 @media (min-height:1080px) {
+	
+	html {
+	overflow:initial;
+	}
 
 	main {
     	justify-content: center;
