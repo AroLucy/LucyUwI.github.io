@@ -93,7 +93,7 @@ footer {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    height: 50vh;
+    min-height: 50vh;
 }
 
 .Project {
