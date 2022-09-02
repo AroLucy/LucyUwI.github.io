@@ -62,7 +62,6 @@ async function update() {
 	timemax = msToTime(Duration);
 	time = msToTime(Progress);
 	document.getElementById("progress").innerHTML = time
-	document.getElementById("max").innerHTML = timemax
 }
 
 setInterval(update, 1000);
