@@ -16,7 +16,7 @@ async function GetData() {
 };
 async function SetData() {
 	LastTrack = document.getElementById("track").innerText
-    	Track = nowPlay.item.name;
+    Track = nowPlay.item.name;
 	Progress = nowPlay.progress_ms;
 
 	// Check if the previous track fetched is the same as current track fetched
@@ -27,20 +27,27 @@ async function SetData() {
 		Album = nowPlay.item.album.name;
 		Artist = nowPlay.item.artists[0].name;
 		Duration = nowPlay.item.duration_ms;
+		if (nowPlay.item.album.images[0].url !== undefined) {
+		    AlbumArt = nowPlay.item.album.images[0].url;
+		}
 
 		// Apply new data to HTML elements 
 		
 		document.getElementById("track").innerText = Track;
 		document.getElementById("album").innerText = Album;
 		document.getElementById("artist").innerText = Artist;
-
-		if (nowPlay.item.album.images[0] !== undefined) {
-			document.getElementById("art").style.display = "block"
-			AlbumArt = nowPlay.item.album.images[0].url;
-			document.getElementById("art").src = AlbumArt;
+		document.getElementById("length").max = Duration;
+		if (AlbumArt === undefined) {
+		    document.getElementById("art").style.display = "none"
 		} else {
-			document.getElementById("art").style.display = "none"
+		    document.getElementById("art").style.display = "block"
+		    document.getElementById("art").src = AlbumArt;
 		}
+	};
+	if (Track === undefined) {
+		document.getElementById("spotify").style.display = "none"
+	} else {
+		document.getElementById("spotify").style.display = "flex"
 	};
 	// Update progress bar with new time 
 							
@@ -59,7 +66,6 @@ function msToTime(duration) {
 async function update() {
 	GetData()
 	SetData()
-	timemax = msToTime(Duration);
 	time = msToTime(Progress);
 	document.getElementById("progress").innerHTML = time
 }
