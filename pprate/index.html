@@ -2,24 +2,28 @@
 <html>
   <head>
     <title>Lucy's Home - PP Rate Bot</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/media/style.css">
     <link rel="icon" href="/media/me.ico">
+    <meta content="Lucy's Home - PP Rate Bot" property="og:title" />
+    <meta content="A Discord Bot rate your PPs!" property="og:description" />
+    <meta content="https://lucys.page" property="og:url" />
+    <meta content="https://raw.githubusercontent.com/LucyUwI/LucyUwI.github.io/main/media/media/me.png" property="og:image" />
+    <meta content="#ffabf7" data-react-helmet="true" name="theme-color" />
   </head>
   <body>
     <main>
-      <div id="Content">
-          <h1>PP Rate Bot</h1>
-          <p>A Discord Bot rate your PPs!</p>
-          <div id="Buttons">
-            <button id="button1" onclick="window.location='https://github.com/lucyuwi/PPRate'"><img id="github" src="/media/github.svg"></button>
-            <button id="button2" onclick="window.location='https://discord.com/oauth2/authorize?client_id=%20939671794804224092&scope=bot&permissions=23552'"><img id="discord" src="/media/discord.svg"></button>
-          </div>
-          <button id="MainButton" onclick="window.location='/'">Go Home</button>
+      <h1>PP Rate Bot</h1>
+      <p>A Discord Bot rate your PPs!</p>
+      <div id="Buttons">
+        <button id="button1" onclick="window.location='https://github.com/lucyuwi/PPRate'"><img id="github" src="/media/github.svg"></button>
+        <button id="button2" onclick="window.location='https://discord.com/oauth2/authorize?client_id=%20939671794804224092&scope=bot&permissions=23552'"><img id="discord" src="/media/discord.svg"></button>
       </div>
+      <button id="MainButton" onclick="window.location='/'">Go Home</button>
     </main>
-    <div id="ThemeContainer">
+    <footer>
       <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg"></button>
-    </div>
+    </footer>
     <script src="/media/app.js"></script>
   </body>
 </html>

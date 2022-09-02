@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html id="A">
+<html id="ProjectsHTML">
   <head>
     <title>Lucy's Home - Projects</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/media/style.css?id=2">
     <link rel="icon" href="/media/me.ico">
+    <meta content="Lucy's Home - Projects" property="og:title" />
+    <meta content="Here I host all of my projects" property="og:description" />
+    <meta content="https://lucys.page" property="og:url" />
+    <meta content="https://raw.githubusercontent.com/LucyUwI/LucyUwI.github.io/main/media/media/me.png" property="og:image" />
+    <meta content="#ffabf7" data-react-helmet="true" name="theme-color" />
   </head>
   <body>
-    <main>
-      <div id="ProjectContent">
-          <h1>Projects :)</h1>
-          <div id="Buttons">
-            <button id="button1" onclick="window.location='https://github.com/lucyuwi'"><img id="github" src="/media/github.svg"></button>
-            <button id="button2" onclick="window.location='https://twitter.com/lucyistrans'"><img id="twitter" src="/media/twitter.svg"></button>
-          </div>
-          <button id="MainButton" onclick="window.location='/'">Go Home</button>
+    <main id="ProjectsMain">
+      <h1>Projects :)</h1>
+      <div id="Buttons">
+        <button id="button1" onclick="window.location='https://github.com/lucyuwi'"><img id="github" src="/media/github.svg"></button>
+        <button id="button2" onclick="window.location='https://twitter.com/lucyistrans'"><img id="twitter" src="/media/twitter.svg"></button>
       </div>
+      <button id="MainButton" onclick="window.location='/'">Go Home</button>
       <div id="Projects">
         <div class="Project">
           <h1>Spotify Web Module</h1>
@@ -42,9 +46,9 @@
         </div>
       </div>
     </main>
-      <div id="ThemeContainer">
-        <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg"></button>
-      </div>
+    <footer>
+      <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg"></button>
+    </footer>
     <script src="/media/app.js"></script>
   </body>
 </html>

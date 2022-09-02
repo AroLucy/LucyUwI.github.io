@@ -4,7 +4,7 @@
 
 /* Global Colors */
 
-:root{
+:root {
     --body: #fff;
     --text: #000;
     --shadow: #777;
@@ -18,7 +18,8 @@
     --twickd: var(--text);
     --theme: var(--text);
 }
-.darkmode{
+
+.darkmode {
     --body: #222;
     --text: #fff;
     --shadow: #555;
@@ -35,145 +36,93 @@
 
 /* Main Styles */
 
-
-
-body,
-html{
-    margin: 0;
+html,
+body {
+    height: 100%;
+    margin: 0px;
     background: var(--body);
     color: var(--text);
 }
 
-#A {
-    height:fit-content;
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
-main {
-    height: auto;
+#ProjectsMain {
+    top: 25vh;
+    position: relative;
+    padding-bottom: 5em;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 0%;
+    width: 100vw;
+    filter: drop-shadow(0px 0px 5px var(--shadow));
+}
+
+/* Text Styles */
+
+h1,
+h2,
+label {
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(0px 0px 0.1px var(--shadow));
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
 }
 
-footer {
-	filter: drop-shadow(0px 0px 5px var(--shadow));
-}
-
-/* Content Boxes */
-
-#Content {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
-    text-align: center;
-}
-
-#ProjectContent {
-    height: 65vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-end;
-    justify-content: flex-end;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
-    text-align: center;
-    padding-bottom: 4em;
-}
-
-#Projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    height: 50vh;
-}
-
-.Project {
-    display: flex;
-    min-width: 6rem;
-    max-width: 14rem;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    text-align:center;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
-}
-
-/* Social Media Buttons */
-
-#Buttons {
-    padding-bottom: 20px;
-}
-
-#Buttons > button {
-    border: none;
-    background: #00000000;
-}
-
-#Buttons > button > img {
-    height: 2em;
-}
-
-#twitter:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(120%) contrast(97%);
-}
-#github:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(200%) contrast(97%);
-}
-#discord:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(230deg) brightness(120%) contrast(97%);
-}
-#twickd:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(120%) contrast(97%);
-}
-
-.DarkIcon > #twitter:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(10deg) brightness(120%) contrast(97%);
-}
-.DarkIcon > #github:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(90deg) brightness(100%) contrast(100%);
-}
-.DarkIcon > #discord:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(120%) contrast(97%);
-}
-.DarkIcon > #twickd:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(140deg) brightness(120%) contrast(97%);
-}
-
-.DarkIcon {
-    filter: invert()
-}
-
 /* Buttons */
 
 #MainButton {
     display: flex;
-    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    width: 15%;
-    height: 40px;
-    flex-direction: column;
     justify-content: center;
-    border-radius: 50px;
-    border: none;
     align-items: center;
+    height: 3em;
+    width: 8em;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
+    border: none;
+    border-radius: 2em;
     transition: width 1s;
 }
 
 #MainButton:hover {
-    width: 20%;
-    transition: all 1s;
+    transition: width 1s;
+    width: 10em;
+}
+
+/* Projects Page */
+
+#ProjectsMain>#MainButton {
+    padding-block: 1em;
+}
+
+#Projects {
+    padding-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    min-width: 7em;
+    max-width: 14em
 }
 
 .ProjectButton {
@@ -182,7 +131,7 @@ footer {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     width: 5em;
-    height: 40px;
+    height: 3em;
     flex-direction: column;
     justify-content: center;
     border-radius: 50px;
@@ -196,138 +145,139 @@ footer {
     transition: all 1s;
 }
 
+/* Link Buttons */
+
+#Buttons {
+    padding-bottom: 1em;
+}
+
+#Buttons>button {
+    background: transparent;
+    border: none;
+}
+
+#twitter:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(120%) contrast(97%);
+}
+
+#github:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(200%) contrast(97%);
+}
+
+#discord:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(230deg) brightness(120%) contrast(97%);
+}
+
+#twickd:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(120%) contrast(97%);
+}
+
+.DarkIcon>#twitter:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(10deg) brightness(120%) contrast(97%);
+}
+
+.DarkIcon>#github:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(90deg) brightness(100%) contrast(100%);
+}
+
+.DarkIcon>#discord:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(120%) contrast(97%);
+}
+
+.DarkIcon>#twickd:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(140deg) brightness(120%) contrast(97%);
+}
+
+.DarkIcon {
+    filter: invert()
+}
+
+#Buttons>button>img {
+    width: 2em;
+}
+
+#discord {
+    width: 2.25em !important;
+}
+
 /* Theme Button */
 
 #theme {
-	display:flex;
-	justify-content: center;
-	border-radius: 50px;
-	position: fixed;
-	right: 1em;
-	bottom: 1em;
-	background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
-	border: none;
-	height: 40px;
-	width: 40px;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 3em;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
+    border: none;
+    border-radius: 2em;
 }
 
-#theme > img {
-    height: inherit;
+#theme>img {
     filter: invert();
 }
 
-#theme:hover > img {
+#theme:hover>img {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
-}
-#ThemeContainer {
-    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 /* Spotify Now Playing */
 
 #spotify {
-	display:none;
-	align-items:center;
-	bottom: 0%;
-	position: absolute;
+    display: none;
+    align-items: center;
+    bottom: 1em;
+    left: 1em;
+    position: absolute;
 }
 
 #track {
-  font-size: 12pt;
-  padding-right: 1em;
+    font-size: 1.25em;
 }
+
 #album {
-  font-size: 7pt;
-  display: none;
+    display: none;
 }
+
 #artist {
-  font-size: 9pt;
+    font-size: 0.75em;
 }
+
 #text {
-  font-family: 'Open Sans';
+    padding-left: 1em;
 }
+
 #art {
-  height: 5em;
-  width: 5em;
-  padding: 1em;
+    height: 5em;
+    width: 5em;
 }
+
 label#progress {
-	font-size: 1em;
+    font-size: 0.75em;
 }
 
 /* Mobile Styles */
 
-@media (min-height:1080px) {
-	
-	html:not(#A) {
-	overflow:initial;
-	}
+@media only screen and (max-width:600px) {
+    #Projects {
+        flex-direction: column;
+    }
 
-	main {
-    	justify-content: center;
-	}
-	content: {
-		width: 95vw;
-	}
-    h1 {
-        font-size: 8vw;
-    }
-    #Buttons > button > img {
-        height: 4em;
-    }
-    #MainButton {
-        width: 30%;
-        height: 80px;
-        font-size: 2rem;
-    }
-    .ProjectButton {
-        width: 30%;
-        height: 80px;
-        font-size: 2rem;
-    }
-    #theme {
-        height: 80px;
-        font-size: 2rem;
-    }
-    p {
-        font-size: 3rem;
-    }
-    #ProjectContent {
-        height: 60vh;
-    }
-    #Projects{
+    #Projects {
         padding-bottom: 10vh;
         flex-direction: column;
         height: auto;
     }
-    #ThemeContainer {
-        height: auto;
-    }
+
     .Project {
         min-width: 75vw;
     }
-	div#spotify {
-	    width: 75vw;
-	}
-	progress#length {
-	    width: 80%;
-	    height: 2em;
-	}
-	
-	label#progress {
-	    font-size: 2em;
-	}
-	#text {
-		width: 50vw;
-	}
-	#track {
-		font-size: 4em;
-	}
-	#artist {
-		font-size: 3em;
-	}
-	#art {
-		width: 10em;
-		height: 10em;
-	}
+
+    #ProjectsMain {
+        top: 75vh
+    }
 }
