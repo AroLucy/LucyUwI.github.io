@@ -16,7 +16,7 @@ async function GetData() {
 };
 async function SetData() {
 	LastTrack = document.getElementById("track").innerText
-    Track = nowPlay.item.name;
+    	Track = nowPlay.item.name;
 	Progress = nowPlay.progress_ms;
 
 	// Check if the previous track fetched is the same as current track fetched
@@ -26,6 +26,7 @@ async function SetData() {
 								
 		Album = nowPlay.item.album.name;
 		Artist = nowPlay.item.artists[0].name;
+		Duration = nowPlay.item.duration_ms;
 
 		// Apply new data to HTML elements 
 		
