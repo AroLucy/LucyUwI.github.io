@@ -143,36 +143,21 @@ p {
 }
 
 #twitter:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(120%) contrast(97%);
+    filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(180deg)
 }
 
 #github:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(200%) contrast(97%);
+    filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(310deg)
 }
 
 #discord:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(230deg) brightness(120%) contrast(97%);
+    filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(210deg)
 }
 
 #twickd:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(340deg) brightness(120%) contrast(97%);
+    filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(220deg)
 }
 
-.DarkIcon>#twitter:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(10deg) brightness(120%) contrast(97%);
-}
-
-.DarkIcon>#github:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(90deg) brightness(100%) contrast(100%);
-}
-
-.DarkIcon>#discord:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(120%) contrast(97%);
-}
-
-.DarkIcon>#twickd:hover {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(140deg) brightness(120%) contrast(97%);
-}
 
 .DarkIcon {
     filter: invert()
