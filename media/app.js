@@ -7,8 +7,8 @@ if (document.getElementById("ProjectsHTML") !== null) {
 }
 
 function Toggle() {
-    document.getElementsByTagName("img")[0].classList.toggle("DarkIccon")
-    document.getElementsByTagName("img")[1].classList.toggle("DarkIccon")
+    document.getElementsByTagName("img")[0].classList.toggle("DarkIcon")
+    document.getElementsByTagName("img")[1].classList.toggle("DarkIcon")
     body.classList.toggle("darkmode")
 }
 
