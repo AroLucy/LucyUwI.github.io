@@ -10,13 +10,6 @@
     --shadow: #777;
     --buttonL: #f88;
     --buttonR: #88f;
-    --TbuttonL: #ff1;
-    --TbuttonR: #ff8;
-    --github: var(--text);
-    --twitter: var(--text);
-    --discord: var(--text);
-    --twickd: var(--text);
-    --theme: var(--text);
 }
 
 .darkmode {
@@ -25,13 +18,6 @@
     --shadow: #555;
     --buttonL: #405;
     --buttonR: #005;
-    --TbuttonL: #005;
-    --TbuttonR: #405;
-    --github: var(--text);
-    --twitter: var(--text);
-    --discord: var(--text);
-    --twickd: var(--text);
-    --theme: var(--text);
 }
 
 /* Main Styles */
