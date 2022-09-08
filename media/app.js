@@ -6,23 +6,23 @@ if (document.getElementById("ProjectsHTML") !== null) {
     body = document.body
 }
 
+function Toggle() {
+    document.getElementsByTagName("img")[0].classList.toggle("DarkIccon")
+    document.getElementsByTagName("img")[1].classList.toggle("DarkIccon")
+    body.classList.toggle("darkmode")
+}
+
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light";
-    body.classList.toggle("darkmode")
-    document.getElementById("button1").classList.toggle("DarkIcon")
-    document.getElementById("button2").classList.toggle("DarkIcon")
+    Toggle()
 });
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.classList.toggle("darkmode")
-    document.getElementById("button1").classList.toggle("DarkIcon")
-    document.getElementById("button2").classList.toggle("DarkIcon")
+    Toggle()
 }
 
 function theme() {
-    body.classList.toggle("darkmode")
-    document.getElementById("button1").classList.toggle("DarkIcon")
-    document.getElementById("button2").classList.toggle("DarkIcon")
+    Toggle()
     var toggled = localStorage.getItem('ThemeToggled')
     if (toggled != 'true') {
         localStorage.setItem('ThemeToggled', 'true')
@@ -32,7 +32,5 @@ function theme() {
 }
 
 if (toggled == 'true') {
-    document.getElementsByTagName("html").toggle("darkmode")
-    document.getElementById("button1").classList.toggle("DarkIcon")
-    document.getElementById("button2").classList.toggle("DarkIcon")
+    Toggle()
 }
