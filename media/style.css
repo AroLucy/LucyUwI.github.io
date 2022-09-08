@@ -240,6 +240,7 @@ p {
 #art {
     height: 5em;
     width: 5em;
+    border-radius: 1em;
 }
 
 label#progress {
