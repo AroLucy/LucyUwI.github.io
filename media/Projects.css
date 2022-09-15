@@ -75,14 +75,15 @@ footer {
 }
 
 #Projects {
-	transform: translate(0em, 14em);
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     height: 50vh;
-	padding-bottom: 2em;
+    padding-bottom: 2em;
+    position: absolute;
+    top: 70vh;
 }
 
 .Project {
