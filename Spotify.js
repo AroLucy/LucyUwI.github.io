@@ -35,14 +35,18 @@ async function SetData() {
 		
 		document.getElementById("track").innerText = Track;
 		document.getElementById("album").innerText = Album;
-		document.getElementById("artist").innerText = Artist;
 		document.getElementById("length").max = Duration;
 		if (AlbumArt === undefined) {
-		    document.getElementById("art").style.display = "none"
+		    Response = await fetch("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=15c7aeccdfc01e42d2a026283a691c94&artist=" + Artist + "&album=" + Album + "&format=json", { "Content-Type": "application/json" })
+		    LastFM = await Response.json()
+		    Art = LastFM.album.image[5]["#text"]
+		    Artist = LastFM.album.artist
 		} else {
 		    document.getElementById("art").style.display = "block"
 		    document.getElementById("art").src = AlbumArt;
 		}
+		
+		document.getElementById("artist").innerText = Artist;
 	};
 	if (Track === undefined) {
 		document.getElementById("spotify").style.display = "none"
