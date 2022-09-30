@@ -260,6 +260,7 @@ input[type="range"] {
   border-radius: 1em;
   overflow: hidden;
   -webkit-appearance: none;
+  pointer-events: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
