@@ -220,7 +220,7 @@ label#progress {
 }
 
 /* Mobile Styles */
-@media (min-width:340px) {
+@media (pointer:none), (pointer:coarse) {
     #Projects{
         padding-bottom: 10vh;
         flex-direction: column;
