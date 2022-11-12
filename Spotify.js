@@ -28,7 +28,7 @@ async function SetData() {
 		Artist = nowPlay.item.artists[0].name;
 		Duration = nowPlay.item.duration_ms;
 		if (nowPlay.item.album.images[0] === undefined) {
-        	    Response = await fetch("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=15c7aeccdfc01e42d2a026283a691c94&artist=" + Artist + "&album=" + Album + "&format=json", { "Content-Type": "application/json" })
+        	    Response = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=15c7aeccdfc01e42d2a026283a691c94&artist=" + Artist + "&album=" + Album + "&format=json", { "Content-Type": "application/json" })
 		    LastFM = await Response.json()
 		    AlbumArt = LastFM.album.image[5]["#text"]
 		    Artist = LastFM.album.artist
