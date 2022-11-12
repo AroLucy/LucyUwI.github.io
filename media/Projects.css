@@ -220,81 +220,15 @@ label#progress {
 }
 
 /* Mobile Styles */
-
-@media (min-height:1080px) {
-	
-	html:not(#A) {
-	overflow:initial;
-	}
-
-	main {
-    	justify-content: center;
-	}
-	content: {
-		width: 95vw;
-	}
-    h1 {
-        font-size: 8vw;
-    }
-    #Buttons > button > img {
-        height: 4em;
-    }
-    #MainButton {
-        width: 30%;
-        height: 80px;
-        font-size: 2rem;
-    }
-    .ProjectButton {
-        width: 30%;
-        height: 80px;
-        font-size: 2rem;
-    }
-    #theme {
-        height: 80px;
-        font-size: 2rem;
-    }
-    p {
-        font-size: 3rem;
-    }
-    #ProjectContent {
-        height: 60vh;
-    }
+@media (min-width:340px) {
     #Projects{
         padding-bottom: 10vh;
         flex-direction: column;
         height: auto;
+        width: 100vw
     }
-    #ThemeContainer {
-        height: auto;
-    }
-    .Project {
-        min-width: 75vw;
-    }
-	div#spotify {
-	    width: 75vw;
-	}
-	progress#length {
-	    width: 80%;
-	    height: 2em;
-	}
-	
-	label#progress {
-	    font-size: 2em;
-	}
-	#text {
-		width: 50vw;
-	}
-	#track {
-		font-size: 4em;
-	}
-	#artist {
-		font-size: 3em;
-	}
-	#art {
-		width: 10em;
-		height: 10em;
-	}
 }
+
 
 footer {
     position: fixed;
