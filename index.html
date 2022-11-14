@@ -37,6 +37,15 @@
 		</button>
 	</footer>
     <script src="/media/app.js"></script>
-    <script src="Spotify.js?id=PenisHaImSoImature"></script>
+    <script>
+    	var timestamp = Date.now();
+	var source = "https://www.example.com/myjsfile.js?id="+timestamp;
+
+	window.onload = function() {
+	    var script = document.createElement('script');
+	    script.src = source;
+	    document.append(script);
+	}
+    </script>
   </body>
 </html>
