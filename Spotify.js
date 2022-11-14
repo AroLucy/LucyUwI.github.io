@@ -10,34 +10,36 @@ async function SetData() {
 	} else {
 		document.getElementById("spotify").style.display = "flex";
 	}
-	if (document.getElementById("track").innerText != "Track") {
-		LastTrack = document.getElementById("track").innerText
+	if (nowPlay.playing == true){
+		if (document.getElementById("track").innerText != "Track") {
+			LastTrack = document.getElementById("track").innerText
+		}
+		Track = nowPlay.track;
+		Progress = nowPlay.progress;
+
+		// Check if the previous track fetched is the same as current track fetched
+		if (LastTrack !== Track) {
+
+			// Extract needed Data from nowPlay
+
+			Album = nowPlay.album;
+			Artist = nowPlay.artist;
+			Duration = nowPlay.length;
+			AlbumArt = nowPlay.albumArt;
+
+			// Apply new data to HTML elements 
+
+			document.getElementById("track").innerText = Track;
+			document.getElementById("album").innerText = Album;
+			document.getElementById("length").max = Duration;
+			document.getElementById("art").src = AlbumArt;
+			document.getElementById("artist").innerText = Artist;
+
+		};
+		// Update progress bar with new time 
+
+	    document.getElementById("length").value = Progress;
 	}
-  	Track = nowPlay.track;
-	Progress = nowPlay.progress;
-
-	// Check if the previous track fetched is the same as current track fetched
-	if (LastTrack !== Track) {
-
-		// Extract needed Data from nowPlay
-								
-		Album = nowPlay.album;
-		Artist = nowPlay.artist;
-		Duration = nowPlay.length;
-		AlbumArt = nowPlay.albumArt;
-
-		// Apply new data to HTML elements 
-		
-		document.getElementById("track").innerText = Track;
-		document.getElementById("album").innerText = Album;
-		document.getElementById("length").max = Duration;
-		document.getElementById("art").src = AlbumArt;
-		document.getElementById("artist").innerText = Artist;
-		
-	};
-	// Update progress bar with new time 
-							
-    document.getElementById("length").value = Progress;
 }
 GetData()
 
