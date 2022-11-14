@@ -1,40 +1,30 @@
 async function GetData() {
-	// Fetch Access Token from Auth.js and convert to JSON Object
-		
-	response = await fetch("https://api.lucys.page/Auth.json")
-	data = await response.json()
-	auth = data.auth;
-
-	response = await fetch("https://api.spotify.com/v1/me/player/currently-playing?market=GB", {
-	    headers: {
-	        Accept: "application/json",
-		    Authorization: "Bearer " + auth,
-	    	"Content-Type": "application/json"
-	    }
-    });
+	response = await fetch("https://api.lucys.page/playing")
 	nowPlay = await response.json()
 };
+
 async function SetData() {
-	LastTrack = document.getElementById("track").innerText
-  	Track = nowPlay.item.name;
-	Progress = nowPlay.progress_ms;
+	LastTrack = ""
+	if (nowPlay.playing == false){
+		document.getElementById("spotify").style.display = "none";
+	} else {
+		document.getElementById("spotify").style.display = "flex";
+	}
+	if (document.getElementById("track").innerText != "Track") {
+		LastTrack = document.getElementById("track").innerText
+	}
+  	Track = nowPlay.track;
+	Progress = nowPlay.progress;
 
 	// Check if the previous track fetched is the same as current track fetched
 	if (LastTrack !== Track) {
 
 		// Extract needed Data from nowPlay
 								
-		Album = nowPlay.item.album.name;
-		Artist = nowPlay.item.artists[0].name;
-		Duration = nowPlay.item.duration_ms;
-		if (nowPlay.item.album.images[0] === undefined) {
-        	    Response = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=15c7aeccdfc01e42d2a026283a691c94&artist=" + Artist + "&album=" + Album + "&format=json", { "Content-Type": "application/json" })
-		    LastFM = await Response.json()
-		    AlbumArt = LastFM.album.image[5]["#text"]
-		    Artist = LastFM.album.artist
-		} else {
-		    AlbumArt = nowPlay.item.album.images[0].url;
-		}
+		Album = nowPlay.album;
+		Artist = nowPlay.artist;
+		Duration = nowPlay.length;
+		AlbumArt = nowPlay.albumArt;
 
 		// Apply new data to HTML elements 
 		
@@ -43,11 +33,7 @@ async function SetData() {
 		document.getElementById("length").max = Duration;
 		document.getElementById("art").src = AlbumArt;
 		document.getElementById("artist").innerText = Artist;
-	};
-	if (Track === undefined) {
-		document.getElementById("spotify").style.display = "none"
-	} else {
-		document.getElementById("spotify").style.display = "flex"
+		
 	};
 	// Update progress bar with new time 
 							
@@ -70,4 +56,15 @@ async function update() {
 	document.getElementById("progress").innerHTML = time
 }
 
+function updateTime() {
+	nowPlay.progress += 1000
+	if (nowPlay.progress >= nowPlay.duration) {
+		update()
+	} else {
+		time = msToTime(nowPlay.progress);
+		document.getElementById("progress").innerHTML = time
+	}
+}
+
+update()
 setInterval(update, 1000);
