@@ -39,9 +39,12 @@
     <script src="/media/app.js"></script>
     <script>
     	var timestamp = Date.now();
-	var source = "Spotify.js?id="+timestamp;
+	var Spotify = "Spotify.js?id="+timestamp;
+	var app = "media/app.js?id="+timestamp; 
 	var script = document.createElement('script');
-	script.src = source;
+	script.src = Spotify;
+	document.body.appendChild(script);
+        script.src = app;
 	document.body.appendChild(script);
     </script>
   </body>
