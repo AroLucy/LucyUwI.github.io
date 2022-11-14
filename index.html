@@ -39,13 +39,10 @@
     <script src="/media/app.js"></script>
     <script>
     	var timestamp = Date.now();
-	var source = "https://www.example.com/myjsfile.js?id="+timestamp;
-
-	window.onload = function() {
-	    var script = document.createElement('script');
-	    script.src = source;
-	    document.append(script);
-	}
+	var source = "Spotify.js?id="+timestamp;
+	var script = document.createElement('script');
+	script.src = source;
+	document.body.appendChild(script);
     </script>
   </body>
 </html>
