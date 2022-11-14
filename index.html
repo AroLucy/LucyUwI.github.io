@@ -36,15 +36,14 @@
 	    <button id="theme" class="themeL" onclick="theme()"><img id="themeicn" src="/media/theme.svg">
 		</button>
 	</footer>
-    <script>
-    	var timestamp = Date.now();
-	var Spotify = "Spotify.js?id="+timestamp;
-	var app = "media/app.js?id="+timestamp; 
-	var script = document.createElement('script');
-	script.src = Spotify;
-	document.body.appendChild(script);
-        script.src = app;
-	document.body.appendChild(script);
-    </script>
-  </body>
+	<script src="/media/app.js"></script>
+	<script>
+	    var timestamp = Date.now();
+	    var Spotify = "Spotify.js?id="+timestamp;
+	    var app = "media/app.js?id="+timestamp; 
+	    var script = document.createElement('script');
+	    script.src = Spotify;
+	    document.body.appendChild(script);
+	</script>
+    </body>
 </html>
