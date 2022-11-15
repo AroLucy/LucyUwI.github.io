@@ -84,6 +84,7 @@ footer {
     padding-bottom: 2em;
     position: absolute;
     top: 70vh;
+    width: 100vw;
 }
 
 .Project {
