@@ -234,6 +234,26 @@ label#progress {
     font-size: 0.75em;
 }
 
+#progressdiv {
+    display: flex;
+    align-items: center;
+}
+
+#length {
+    background-color: white;
+    height: 0.4em;
+    width: 10em;
+    border-radius: 1em;
+    overflow: hidden;
+    margin-right: 0.4em;
+}
+#lengthProg {
+    background-color: #8f8bff;
+    height: 100%;
+    border-radius: 1em;
+    filter: drop-shadow(0 0 2em #222);
+}
+
 /* Mobile Styles */
 
 @media (pointer:none), (pointer:coarse) {
@@ -257,40 +277,4 @@ label#progress {
     #track {
         width: 60vw
     }
-}
-
-input[type="range"] {
-  border: none;
-  height: 0.5em;
-  border-radius: 1em;
-  overflow: hidden;
-  -webkit-appearance: none;
-  pointer-events: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 0.5em;
-  width: 0.8em;
-  background: #8f8bff;
-  border-radius: 0.2em;
-  filter: drop-shadow(0 0 2em #222);
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  background: #fff;
-  filter: drop-shadow(0 0 2em #222);
-}
-
-input[type="range"]::-moz-range-progress {
-  background-color: #8f8bff;
-  height: 0.5em;
-  border-radius: 1em
-}
-input[type="range"]::-moz-range-track {
-  background-color: transparent;
-}
-input[type="range"]::-moz-range-thumb{
-  background: transparent;
-  border: none
 }

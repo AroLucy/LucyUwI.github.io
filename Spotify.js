@@ -38,7 +38,8 @@ async function SetData() {
 		};
 		// Update progress bar with new time 
 
-	    document.getElementById("length").value = Progress;
+	    //document.getElementById("length").value = Progress;
+		document.getElementById("lengthProg").style.width = (Progress/Duration)*100 + "%";
 	}
 }
 GetData()
