@@ -37,15 +37,10 @@ html{
 main {
     height: auto;
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(0px 0px 0.1px var(--shadow));
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
-}
-
-footer {
-	filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 /* Content Boxes */
@@ -57,7 +52,6 @@ footer {
     align-items: center;
     align-content: center;
     justify-content: center;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
     text-align: center;
 }
 
@@ -68,7 +62,6 @@ footer {
     align-items: center;
     align-content: flex-end;
     justify-content: flex-end;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
     text-align: center;
     padding-bottom: 4em;
 	bottom-padding: 2em
@@ -97,7 +90,6 @@ footer {
     align-items: center;
     padding: 1em;
     text-align:center;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 /* Social Media Buttons */
@@ -157,33 +149,34 @@ footer {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     border: none;
-    border-radius: 2em;
-    transition: width 1s;
+    border-radius: 1em;
+    transition: border-radius 1s ease, width 1s ease;
 }
 
 #MainButton:hover {
-    transition: width 1s;
+    transition: all 1s ease;
+    border-radius: 4em;
     width: 10em;
 }
 
 .ProjectButton {
     display: flex;
-    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    width: 5em;
-    height: 3em;
-    flex-direction: column;
     justify-content: center;
-    border-radius: 50px;
-    border: none;
     align-items: center;
-    transition: all 1s;
+    height: 3em;
+    width: 5em;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
+    border: none;
+    border-radius: 1em;
+    transition: border-radius 1s ease, width 1s ease;
 }
 
 .ProjectButton:hover {
+    transition: all 1s ease;
+    border-radius: 4em;
     width: 7em;
-    transition: all 1s;
 }
 
 
@@ -228,6 +221,25 @@ label#progress {
         height: auto;
         width: 100vw
     }
+    #track {
+        width: 60vw
+    }
+    #statsfmlabel {
+        width: 85vw;
+    }
+    #statsfm {
+        padding-bottom: 0.5em;
+    }
+    #spotify {
+        width: 100vw;
+    }
+    footer {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    body {
+        margin-bottom: 40em;
+    }
 }
 
 
@@ -237,13 +249,12 @@ footer {
     flex-direction: column-reverse;
     bottom: 0em;
     width: 100vw;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 /* Theme Button */
 
 #theme {
     position: absolute;
-    left: 0em;
+    right: 1em;
     bottom: 1em;
     display: flex;
     justify-content: center;
@@ -253,7 +264,7 @@ footer {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     border: none;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 #theme>img {
@@ -262,4 +273,110 @@ footer {
 
 #theme:hover>img {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
+}
+
+/* Spotify Now Playing */
+
+#spotify {
+    display: none;
+    align-items: center;
+    bottom: 1em;
+    left: 1em;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: -1;
+    margin: -1em;
+
+}
+
+#track {
+    font-size: 1.25em;
+    max-height: 3.7em;
+    overflow: auto;
+}
+
+#album {
+    display: none;
+}
+
+#artist {
+    font-size: 0.75em;
+}
+
+#text {
+    padding-left: 1em;
+}
+
+#art {
+    height: 5em;
+    width: 5em;
+    border-radius: 2em;
+}
+
+label#progress {
+    font-size: 0.75em;
+}
+
+#progressdiv {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#length {
+    background-color: #0003;
+    height: 0.4em;
+    width: 10em;
+    border-radius: 1em;
+    overflow: hidden;
+    margin-right: 0.4em;
+}
+#lengthProg {
+    background-color: #8f8bff;
+    height: 100%;
+    border-radius: 1em;
+    filter: drop-shadow(0 0 2em #222);
+}
+
+#statsfm img {
+    filter: invert(64%) sepia(80%) saturate(3697%) hue-rotate(212deg) brightness(104%) contrast(101%);
+    height: 1em;
+    margin-right: 1em;
+}
+#statsfm {
+    display: none;
+    align-items: center;
+    position: absolute;
+    bottom: 5em;
+    left: 0.5em;
+    margin-bottom: 1em;
+}
+
+#statsfm:hover label {
+    display: block;
+}
+
+#statsfmlabel {
+    display: none;
+    position: absolute;
+    width: 16em;
+    background-color: var(--body-trans);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0.5em;
+    border-radius: 1em;
+    border: var(--shadow) 2px solid;
+    font-weight: bold;
+    font-family: 'Open Sans';
+    font-size: 0.8em;
+    left: -0.1em;
+}
+#statsfmlabel>a {
+    color: #8f8bff;
+    text-decoration: dotted;
+}
+
+body {
+    padding-bottom: 25em;
 }

@@ -7,6 +7,7 @@
 :root {
     --body: #fff;
     --body-trans: #eee4;
+    --shadow: #777;
     --text: #000;
     --buttonL: #f88;
     --buttonR: #88f;
@@ -15,6 +16,7 @@
 .darkmode {
     --body: #222;
     --body-trans: #3334;
+    --shadow: #555;
     --text: #fff;
     --buttonL: #405;
     --buttonR: #005;
@@ -77,56 +79,14 @@ p {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     border: none;
-    border-radius: 2em;
-    transition: width 1s;
+    border-radius: 1em;
+    transition: border-radius 1s ease, width 1s ease;
 }
 
 #MainButton:hover {
-    transition: width 1s;
+    transition: all 1s ease;
+    border-radius: 4em;
     width: 10em;
-}
-
-/* Projects Page */
-
-#ProjectsMain>#MainButton {
-    padding-block: 1em;
-}
-
-#Projects {
-    padding-top: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.Project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-    min-width: 7em;
-    max-width: 14em
-}
-
-.ProjectButton {
-    display: flex;
-    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    width: 5em;
-    height: 3em;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50px;
-    border: none;
-    align-items: center;
-    transition: all 1s;
-}
-
-.ProjectButton:hover {
-    width: 7em;
-    transition: all 1s;
 }
 
 /* Link Buttons */
@@ -268,23 +228,6 @@ label#progress {
 /* Mobile Styles */
 
 @media (pointer:none), (pointer:coarse) {
-    #Projects {
-        flex-direction: column;
-    }
-
-    #Projects {
-        padding-bottom: 10vh;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .Project {
-        min-width: 75vw;
-    }
-
-    #ProjectsMain {
-        top: 75vh
-    }
     #track {
         width: 60vw
     }
@@ -310,7 +253,7 @@ label#progress {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
     border: none;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 #theme>img {
