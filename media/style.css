@@ -6,16 +6,16 @@
 
 :root {
     --body: #fff;
+    --body-trans: #eee4;
     --text: #000;
-    --shadow: #777;
     --buttonL: #f88;
     --buttonR: #88f;
 }
 
 .darkmode {
     --body: #222;
+    --body-trans: #3334;
     --text: #fff;
-    --shadow: #555;
     --buttonL: #405;
     --buttonR: #005;
 }
@@ -37,7 +37,6 @@ main {
     align-items: center;
     text-align: center;
     justify-content: center;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 #ProjectsMain {
@@ -52,7 +51,6 @@ footer {
     flex-direction: column-reverse;
     bottom: 0%;
     width: 100vw;
-    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 /* Text Styles */
@@ -171,31 +169,6 @@ p {
     width: 2.25em !important;
 }
 
-/* Theme Button */
-
-#theme {
-    position: absolute;
-    right: 1em;
-    bottom: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3em;
-    width: 3em;
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
-    border: none;
-    border-radius: 2em;
-}
-
-#theme>img {
-    filter: invert();
-}
-
-#theme:hover>img {
-    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
-}
-
 /* Spotify Now Playing */
 
 #spotify {
@@ -237,10 +210,11 @@ label#progress {
 #progressdiv {
     display: flex;
     align-items: center;
+    font-weight: bold;
 }
 
 #length {
-    background-color: white;
+    background-color: #0003;
     height: 0.4em;
     width: 10em;
     border-radius: 1em;
@@ -252,6 +226,43 @@ label#progress {
     height: 100%;
     border-radius: 1em;
     filter: drop-shadow(0 0 2em #222);
+}
+
+#statsfm img {
+    filter: invert(64%) sepia(80%) saturate(3697%) hue-rotate(212deg) brightness(104%) contrast(101%);
+    height: 1em;
+    margin-right: 1em;
+}
+#statsfm {
+    display: none;
+    align-items: center;
+    position: absolute;
+    bottom: 5em;
+    left: 0.5em;
+}
+
+#statsfm:hover label {
+    display: block;
+}
+
+#statsfmlabel {
+    display: none;
+    position: absolute;
+    width: 16em;
+    background-color: var(--body-trans);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0.5em;
+    border-radius: 1em;
+    border: var(--shadow) 2px solid;
+    font-weight: bold;
+    font-family: 'Open Sans';
+    font-size: 0.8em;
+    left: -0.1em;
+}
+#statsfmlabel>a {
+    color: #8f8bff;
+    text-decoration: dotted;
 }
 
 /* Mobile Styles */
@@ -277,4 +288,36 @@ label#progress {
     #track {
         width: 60vw
     }
+    #statsfmlabel {
+        width: 85vw;
+    }
+    #statsfm {
+        padding-bottom: 0.5em;
+    }
 }
+
+/* Theme Button */
+
+#theme {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 3em;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, var(--buttonL), var(--buttonR));
+    border: none;
+    border-radius: 2em;
+}
+
+#theme>img {
+    filter: invert();
+}
+
+#theme:hover>img {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(50deg) brightness(400%) contrast(97%);
+}
+

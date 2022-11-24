@@ -35,6 +35,12 @@ async function SetData() {
 			document.getElementById("art").src = AlbumArt;
 			document.getElementById("artist").innerText = Artist;
 
+			if (nowPlay.id != null) {
+				statsfm()
+			} else {
+				document.getElementById("statsfm").style.display = "none";
+			}
+
 		};
 		// Update progress bar with new time 
 
@@ -58,6 +64,15 @@ async function update() {
 	time = msToTime(Progress);
 	document.getElementById("progress").innerHTML = time
 }
+
+async function statsfm() {
+	StatsFMDataJ = await fetch('https://beta-api.stats.fm/api/v1/tracks/' + nowPlay.id + '?type=spotify')
+	StatsFMData = await StatsFMDataJ.json()
+	StatsFMStatsDataJ = await fetch('https://beta-api.stats.fm/api/v1/users/acelucy/streams/tracks/' + StatsFMData.item.id + '/stats')
+	StatsFMStatsData = await StatsFMStatsDataJ.json()
+	document.getElementById("statsfm").style.display = "flex";
+	document.getElementById("playcount").innerHTML = "Played " + StatsFMStatsData.items.count + " times"
+} 
 
 function updateTime() {
 	nowPlay.progress += 1000

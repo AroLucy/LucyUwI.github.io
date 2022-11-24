@@ -38,4 +38,3 @@ if (toggled == 'true') {
 // Fuck you mobile browsers (Although this just sets the meta tag so it doesnt affect the color of title bars of some browsers)
 
 document.getElementById("color").content = ""
-
