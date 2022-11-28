@@ -3,7 +3,7 @@
   <head>
     <title>Lucy's Home</title>
 	  <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="/media/style.css">
+    <link id="style" rel="stylesheet" type="text/css" href="/media/style.css">
     <link rel="icon" href="/media/me.ico">
     <meta content="Lucy's Home" property="og:title" />
     <meta content="Here I host all of my projects" property="og:description" />
@@ -42,6 +42,7 @@
 	<script src="/media/app.js"></script>
 	<script>
 	    var timestamp = Date.now();
+      document.getElementById("style").href = "/media/style.css" + timestamp;
 	    var Spotify = "Spotify.js?id="+timestamp;
 	    var app = "media/app.js?id="+timestamp; 
 	    var script = document.createElement('script');
