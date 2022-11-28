@@ -182,7 +182,7 @@ label#progress {
     margin-right: 0.4em;
 }
 #lengthProg {
-    background-color: #8f8bff;
+    background: linear-gradient(45deg, #8f8bff, #b5b3f2);
     height: 100%;
     border-radius: 1em;
     filter: drop-shadow(0 0 2em #222);
