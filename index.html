@@ -42,7 +42,8 @@
 	<script src="/media/app.js"></script>
 	<script>
 	    var timestamp = Date.now();
-      document.getElementById("style").href = "/media/style.css" + timestamp;
+      var style = "/media/style.css"+timestamp;
+      document.getElementById("style").href = style;
 	    var Spotify = "Spotify.js?id="+timestamp;
 	    var app = "media/app.js?id="+timestamp; 
 	    var script = document.createElement('script');
